@@ -3,6 +3,7 @@ import 'package:telegramuitoolkit/view/auth/auth_view.dart';
 import 'package:telegramuitoolkit/view/cart/cart_view.dart';
 import 'package:telegramuitoolkit/view/cart/chats/chat_view.dart';
 import 'package:telegramuitoolkit/view/cart/contacts/contacts_view.dart';
+import 'package:telegramuitoolkit/view/cart/settings/settings_view.dart';
 import 'package:telegramuitoolkit/view/pages/info/info_view.dart';
 
 class MyRoutes {
@@ -28,8 +29,8 @@ class MyRoutes {
       case '/contacts':
         return MaterialPageRoute(builder: (_) => const ContactsView());
 
-      // case '/auth':
-      //   return MaterialPageRoute(builder: (_) => const AuthView());
+      case '/settings':
+        return MaterialPageRoute(builder: (_) => const SettingsView());
 
       // case '/auth':
       //   return MaterialPageRoute(builder: (_) => const AuthView());

@@ -9,7 +9,7 @@ class ContactsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsConst.colorWhite,
+      backgroundColor: ColorConst.colorWhite,
       appBar: _appBar(),
       body: Column(
         children: [
@@ -17,7 +17,7 @@ class ContactsView extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30,
-                backgroundColor: ColorsConst.colorTransparent,
+                backgroundColor: ColorConst.colorTransparent,
                 child: SvgPicture.asset("assets/icons/location.svg"),
               ),
               title: Text(
@@ -36,7 +36,7 @@ class ContactsView extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30,
-                backgroundColor: ColorsConst.colorTransparent,
+                backgroundColor: ColorConst.colorTransparent,
                 child: SvgPicture.asset("assets/icons/addFriends.svg"),
               ),
               title: Text(
@@ -64,7 +64,7 @@ class ContactsView extends StatelessWidget {
                         backgroundImage: NetworkImage(
                           "https://source.unsplash.com/random/$index",
                         ),
-                        backgroundColor: ColorsConst.color007AFF,
+                        backgroundColor: ColorConst.color007AFF,
                       ),
                       title: Text(
                         "Nick Name",
@@ -95,7 +95,7 @@ class ContactsView extends StatelessWidget {
   AppBar _appBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: ColorsConst.colorF6F6F6,
+      backgroundColor: ColorConst.colorF6F6F6,
       centerTitle: true,
       title: Text(
         "Contacts",
@@ -105,7 +105,7 @@ class ContactsView extends StatelessWidget {
         IconButton(
           icon: Icon(
             Icons.add,
-            color: ColorsConst.color007AFF,
+            color: ColorConst.color007AFF,
           ),
           onPressed: () {},
         ),
