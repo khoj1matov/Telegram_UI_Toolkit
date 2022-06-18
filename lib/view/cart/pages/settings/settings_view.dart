@@ -26,7 +26,7 @@ class SettingsView extends StatelessWidget {
               ),
               title: Text(
                 "Nick Name",
-                style: MyTextStyle.myTextStyle(
+                style: MyTextStyleComp.myTextStyle(
                   color: ColorConst.colorBlack,
                   fontSize: 20,
                 ),
@@ -38,23 +38,90 @@ class SettingsView extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.048),
           _container(
             context,
             MediaQuery.of(context).size.height * 0.1,
             Column(
               children: [
-                Row(
-                  children: [
-                    SvgPicture.asset("assets/icons/settingsRectangle.svg"),
-                    const Text("Jacob Design"),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: _inkwell("tabBarContacts1", " Jacob Design"),
                 ),
+                _divider(context),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: _inkwell("settingsAdd", "  Add Account"),
+                )
               ],
             ),
-          )
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.048),
+          _container(
+            context,
+            MediaQuery.of(context).size.height * 0.175,
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: _inkwell("settingsSaved", "Saved Messages"),
+                ),
+                _divider(context),
+                _inkwell("settingsCall", "Recent Calls"),
+                _divider(context),
+                _inkwell("settingsStikers", "Stickers")
+              ],
+            ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.048),
+          _container(
+            context,
+            MediaQuery.of(context).size.height * 0.23,
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: _inkwell("settingsNotificationsAndSounds",
+                      "Notifications and Sounds"),
+                ),
+                _divider(context),
+                _inkwell("settingsPrivacySecurity", "Privacy and Security"),
+                _divider(context),
+                _inkwell("settingsDataStorage", "Data and Storage"),
+                _divider(context),
+                _inkwell("settingsAppearance", "Appearance"),
+              ],
+            ),
+          ),
         ],
       ),
+    );
+  }
+
+  Divider _divider(BuildContext context) {
+    return Divider(
+      thickness: 1,
+      indent: MediaQuery.of(context).size.width * 0.17,
+    );
+  }
+
+  InkWell _inkwell(String svg, String text) {
+    return InkWell(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset("assets/icons/$svg.svg"),
+            const SizedBox(width: 20),
+            Text(
+              text,
+              style: MyTextStyleComp.myTextStyle(fontSize: 18),
+            ),
+          ],
+        ),
+      ),
+      onTap: () {},
     );
   }
 
@@ -75,13 +142,13 @@ class SettingsView extends StatelessWidget {
       centerTitle: true,
       title: Text(
         "Settings",
-        style: MyTextStyle.contactsAppBarTitleStyle,
+        style: MyTextStyleComp.contactsAppBarTitleStyle,
       ),
       actions: [
         TextButton(
           child: Text(
             "Edit",
-            style: MyTextStyle.myTextStyle(
+            style: MyTextStyleComp.myTextStyle(
               color: ColorConst.color037EE5,
               fontSize: 17,
             ),
@@ -107,7 +174,7 @@ class SettingsView extends StatelessWidget {
                 const SizedBox(width: 10),
                 Text(
                   "Search",
-                  style: MyTextStyle.myTextStyle(
+                  style: MyTextStyleComp.myTextStyle(
                     color: ColorConst.color3C3C43,
                     fontSize: 17,
                   ),

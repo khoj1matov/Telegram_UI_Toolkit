@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telegramuitoolkit/core/constants/color_const.dart';
 
-class MyTextStyle {
+class MyTextStyleComp {
   static TextStyle myTextStyle(
       {Color color = Colors.black, double fontSize = 14}) {
     return TextStyle(color: color, fontSize: fontSize);

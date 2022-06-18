@@ -7,6 +7,7 @@ class ColorConst {
 
   // Telegram Authorization (1 - Page)
   static Color color007AFF = const Color(0xff007AFF);
+  static Color color545458 = const Color(0xff545458);
   static Color color77D572 = const Color(0xff77D572);
   static Color colorD1D5DB = const Color(0xffD1D5DB);
   static Color colorFCFCFE = const Color(0xffFCFCFE);

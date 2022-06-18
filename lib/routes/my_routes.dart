@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:telegramuitoolkit/view/cart/pages/settings/settings_view.dart';
 import 'package:telegramuitoolkit/view/auth/auth_view.dart';
 import 'package:telegramuitoolkit/view/cart/cart_view.dart';
-import 'package:telegramuitoolkit/view/cart/chats/chat_view.dart';
-import 'package:telegramuitoolkit/view/cart/contacts/contacts_view.dart';
-import 'package:telegramuitoolkit/view/cart/settings/settings_view.dart';
+import 'package:telegramuitoolkit/view/cart/pages/chats/chat_view.dart';
 import 'package:telegramuitoolkit/view/pages/info/info_view.dart';
+import 'package:telegramuitoolkit/view/cart/pages/contacts/contacts_view.dart';
 
 class MyRoutes {
   static final MyRoutes _instanse = MyRoutes.init();
