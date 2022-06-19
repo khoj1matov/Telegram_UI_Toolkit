@@ -4,6 +4,7 @@ import 'package:telegramuitoolkit/view/cart/pages/settings/settings_view.dart';
 import 'package:telegramuitoolkit/view/auth/auth_view.dart';
 import 'package:telegramuitoolkit/view/cart/cart_view.dart';
 import 'package:telegramuitoolkit/view/cart/pages/chats/chat_view.dart';
+import 'package:telegramuitoolkit/view/pages/info/info2_view.dart';
 import 'package:telegramuitoolkit/view/pages/info/info_view.dart';
 import 'package:telegramuitoolkit/view/cart/pages/contacts/contacts_view.dart';
 import 'package:telegramuitoolkit/view/pages/profiles/profiles_view.dart';
@@ -18,7 +19,7 @@ class MyRoutes {
     var args = s.arguments;
     switch (s.name) {
       case '/auth':
-        return MaterialPageRoute(builder: (_) => const AuthView());
+        return MaterialPageRoute(builder: (_) => AuthView());
 
       case '/cart':
         return MaterialPageRoute(builder: (_) => const CartView());
@@ -28,6 +29,9 @@ class MyRoutes {
 
       case '/info':
         return MaterialPageRoute(builder: (_) => const InfoView());
+
+      case '/info2':
+        return MaterialPageRoute(builder: (_) => const Info2View());
 
       case '/contacts':
         return MaterialPageRoute(builder: (_) => const ContactsView());
