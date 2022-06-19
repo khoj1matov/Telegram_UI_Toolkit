@@ -10,6 +10,68 @@ class CallsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(context),
+      body: SizedBox(
+        // TabBar qoshsak shu yerda height da hato berishi mumkin
+        height: MediaQuery.of(context).size.height, //* 1.772
+        child: ListView.builder(
+          itemBuilder: (context, index) => Column(
+            children: [
+              InkWell(
+                child: ListTile(
+                  leading: SizedBox(
+                    width: 80,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SvgPicture.asset("assets/icons/callsIncoming.svg"),
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundImage: NetworkImage(
+                            "https://source.unsplash.com/random/$index",
+                          ),
+                          backgroundColor: ColorConst.color007AFF,
+                        ),
+                      ],
+                    ),
+                  ),
+                  title: Text(
+                    "Nick Name",
+                    style: MyTextStyleComp.contactsAppBarTitleStyle,
+                  ),
+                  subtitle: Text(
+                    "Outgoing",
+                    style: MyTextStyleComp.myTextStyle(
+                      color: ColorConst.color8E8E93,
+                      fontSize: 15,
+                    ),
+                  ),
+                  trailing: SizedBox(
+                    width: 100,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text("$index/${index + 10}"),
+                        const SizedBox(width: 5),
+                        InkWell(
+                          child: SvgPicture.asset("assets/icons/callsInfo.svg"),
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                onTap: () {},
+              ),
+              Divider(
+                thickness: 1,
+                height: 0,
+                indent: MediaQuery.of(context).size.width * 0.28,
+              ),
+            ],
+          ),
+          itemCount: 20,
+        ),
+      ),
     );
   }
 

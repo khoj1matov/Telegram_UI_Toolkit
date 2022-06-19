@@ -7,6 +7,7 @@ import 'package:telegramuitoolkit/view/cart/pages/chats/chat_view.dart';
 import 'package:telegramuitoolkit/view/pages/info/info_view.dart';
 import 'package:telegramuitoolkit/view/cart/pages/contacts/contacts_view.dart';
 import 'package:telegramuitoolkit/view/pages/profiles/profiles_view.dart';
+import 'package:telegramuitoolkit/view/pages/stickers/stickers_view.dart';
 
 class MyRoutes {
   static final MyRoutes _instanse = MyRoutes.init();
@@ -39,6 +40,9 @@ class MyRoutes {
 
       case '/call':
         return MaterialPageRoute(builder: (_) => const CallsView());
+
+      case '/stickers':
+        return MaterialPageRoute(builder: (_) => const StickersView());
     }
   }
 }

@@ -13,30 +13,32 @@ class SettingsView extends StatelessWidget {
       appBar: _appBar(context),
       body: Column(
         children: [
-          _container(
-            context,
-            MediaQuery.of(context).size.height * 0.1,
-            ListTile(
-              leading: CircleAvatar(
-                radius: 30,
-                backgroundImage: const NetworkImage(
-                  "https://source.unsplash.com/random/${1}",
+          InkWell(
+            child: _container(
+              context,
+              MediaQuery.of(context).size.height * 0.1,
+              ListTile(
+                leading: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: const NetworkImage(
+                    "https://source.unsplash.com/random/${1}",
+                  ),
+                  backgroundColor: ColorConst.color007AFF,
                 ),
-                backgroundColor: ColorConst.color007AFF,
-              ),
-              title: Text(
-                "Nick Name",
-                style: MyTextStyleComp.myTextStyle(
-                  color: ColorConst.colorBlack,
-                  fontSize: 20,
+                title: Text(
+                  "Nick Name",
+                  style: MyTextStyleComp.myTextStyle(
+                    color: ColorConst.colorBlack,
+                    fontSize: 20,
+                  ),
                 ),
-              ),
-              subtitle: const Text('+1 202 555 0147\n@jacob_d'),
-              trailing: IconButton(
-                icon: const Icon(Icons.chevron_right_sharp),
-                onPressed: () {},
+                subtitle: const Text('+1 202 555 0147\n@jacob_d'),
+                trailing: const Icon(Icons.chevron_right_sharp),
               ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.048),
           _container(
@@ -46,12 +48,12 @@ class SettingsView extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: _inkwell("tabBarContacts1", " Jacob Design"),
+                  child: _inkwell("tabBarContacts1", " Jacob Design", () {}),
                 ),
                 _divider(context),
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
-                  child: _inkwell("settingsAdd", "  Add Account"),
+                  child: _inkwell("settingsAdd", "  Add Account", () {}),
                 )
               ],
             ),
@@ -64,12 +66,14 @@ class SettingsView extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: _inkwell("settingsSaved", "Saved Messages"),
+                  child: _inkwell("settingsSaved", "Saved Messages", () {}),
                 ),
                 _divider(context),
-                _inkwell("settingsCall", "Recent Calls"),
+                _inkwell("settingsCall", "Recent Calls", () {}),
                 _divider(context),
-                _inkwell("settingsStikers", "Stickers")
+                _inkwell("settingsStikers", "Stickers", () {
+                  Navigator.pushNamed(context, '/stickers');
+                }),
               ],
             ),
           ),
@@ -81,15 +85,19 @@ class SettingsView extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: _inkwell("settingsNotificationsAndSounds",
-                      "Notifications and Sounds"),
+                  child: _inkwell(
+                    "settingsNotificationsAndSounds",
+                    "Notifications and Sounds",
+                    () {},
+                  ),
                 ),
                 _divider(context),
-                _inkwell("settingsPrivacySecurity", "Privacy and Security"),
+                _inkwell(
+                    "settingsPrivacySecurity", "Privacy and Security", () {}),
                 _divider(context),
-                _inkwell("settingsDataStorage", "Data and Storage"),
+                _inkwell("settingsDataStorage", "Data and Storage", () {}),
                 _divider(context),
-                _inkwell("settingsAppearance", "Appearance"),
+                _inkwell("settingsAppearance", "Appearance", () {}),
               ],
             ),
           ),
@@ -105,23 +113,34 @@ class SettingsView extends StatelessWidget {
     );
   }
 
-  InkWell _inkwell(String svg, String text) {
+  InkWell _inkwell(String svg, String text, function) {
     return InkWell(
       child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 20, right: 17),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset("assets/icons/$svg.svg"),
-            const SizedBox(width: 20),
-            Text(
-              text,
-              style: MyTextStyleComp.myTextStyle(fontSize: 18),
+            SizedBox(
+              child: Row(
+                children: [
+                  SvgPicture.asset("assets/icons/$svg.svg"),
+                  const SizedBox(width: 20),
+                  Text(
+                    text,
+                    style: MyTextStyleComp.myTextStyle(fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.chevron_right,
+              color: ColorConst.color3C3C43,
             ),
           ],
         ),
       ),
-      onTap: () {},
+      onTap: function,
     );
   }
 
@@ -137,6 +156,7 @@ class SettingsView extends StatelessWidget {
 
   AppBar _appBar(BuildContext context) {
     return AppBar(
+      iconTheme: IconThemeData(color: ColorConst.color007AFF),
       elevation: 0,
       backgroundColor: ColorConst.colorF6F6F6,
       centerTitle: true,

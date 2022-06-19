@@ -201,6 +201,7 @@ class ProfileView extends StatelessWidget {
 
   AppBar _appBar(BuildContext context) {
     return AppBar(
+      iconTheme: IconThemeData(color: ColorConst.color007AFF),
       elevation: 0,
       backgroundColor: ColorConst.colorF6F6F6,
       centerTitle: true,
