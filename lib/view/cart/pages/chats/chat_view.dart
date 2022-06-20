@@ -88,9 +88,9 @@ class ChatView extends StatelessWidget {
         InkWell(
           child: CircleAvatar(
             radius: 25,
-            // backgroundImage: const NetworkImage(
-            //   "https://source.unsplash.com/random/",
-            // ),
+            backgroundImage: const NetworkImage(
+              "https://source.unsplash.com/random/",
+            ),
             backgroundColor: ColorConst.color007AFF,
           ),
           onTap: () {

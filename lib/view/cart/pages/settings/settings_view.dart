@@ -88,14 +88,19 @@ class SettingsView extends StatelessWidget {
                   child: _inkwell(
                     "settingsNotificationsAndSounds",
                     "Notifications and Sounds",
-                    () {},
+                    () {
+                      Navigator.pushNamed(context, '/notification');
+                    },
                   ),
                 ),
                 _divider(context),
-                _inkwell(
-                    "settingsPrivacySecurity", "Privacy and Security", () {}),
+                _inkwell("settingsPrivacySecurity", "Privacy and Security", () {
+                  Navigator.pushNamed(context, "/privacy");
+                }),
                 _divider(context),
-                _inkwell("settingsDataStorage", "Data and Storage", () {}),
+                _inkwell("settingsDataStorage", "Data and Storage", () {
+                  Navigator.pushNamed(context, "/data_and_storage");
+                }),
                 _divider(context),
                 _inkwell("settingsAppearance", "Appearance", () {}),
               ],

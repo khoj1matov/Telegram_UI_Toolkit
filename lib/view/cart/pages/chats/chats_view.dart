@@ -40,27 +40,32 @@ class ChatsView extends StatelessWidget {
           const SizedBox(width: 10),
         ],
         bottom: PreferredSize(
-          preferredSize: Size(MediaQuery.of(context).size.width, 36),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          preferredSize: const Size.fromHeight(50),
+          child: InkWell(
             child: Container(
+              margin: const EdgeInsets.only(bottom: 15),
+              height: MediaQuery.of(context).size.height * 0.045,
+              width: MediaQuery.of(context).size.width * 0.95,
               decoration: BoxDecoration(
-                color: ColorConst.color767680_12,
                 borderRadius: BorderRadius.circular(10),
+                color: ColorConst.color767680_12,
               ),
-              height: 36,
-              child: TextFormField(
-                keyboardType: TextInputType.name,
-                controller: TextEditingController(),
-                decoration: const InputDecoration(
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide.none,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.search, color: ColorConst.color3C3C43),
+                  const SizedBox(width: 10),
+                  Text(
+                    "Search for messages or users",
+                    style: MyTextStyleComp.myTextStyle(
+                      color: ColorConst.color3C3C43,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
+            onTap: () {},
           ),
         ),
       ),
